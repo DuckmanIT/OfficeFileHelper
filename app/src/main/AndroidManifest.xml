@@ -16,7 +16,7 @@
         android:theme="@style/Theme.OfficeFileLoader"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.MainActivity"
+            android:name="com.example.officefileloader.presentation.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

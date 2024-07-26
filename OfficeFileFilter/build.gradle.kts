@@ -1,21 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-//    id("com.google.devtools.ksp") version "2.0.0-1.0.23"
+    id("com.google.devtools.ksp") version "2.0.0-1.0.23"
 }
 
 android {
-    namespace = "com.example.officefileloader"
+    namespace = "com.example.officefilefilter"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.officefileloader"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,10 +31,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -45,9 +38,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    implementation(project(":OfficeFileFilter"))
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,7 +50,18 @@ dependencies {
     implementation (libs.androidx.lifecycle.livedata.ktx)
 
     //Room db
-//    implementation("androidx.room:room-runtime:2.6.1")
-//    ksp("androidx.room:room-compiler:2.6.1")
-//    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    //mockk
+    //mockito
+//    testImplementation(libs.mockito.core) // Mockito
+//    testImplementation(libs.mockito.kotlin) // Mockito Kotlin
+    //runtest
+    androidTestImplementation(libs.androidx.room.testing)
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.truth)
+    testImplementation(libs.kotlinx.coroutines.test.v171)
+    testImplementation(libs.truth)
+    testImplementation(libs.mockk) // Phiên bản mới nhất tại thời điểm hiện tại
 }

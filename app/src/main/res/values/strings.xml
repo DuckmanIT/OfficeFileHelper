@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OfficeFileLoader</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="document_name">Name</string>
+    <string name="document_description">Description</string>
+    <string name="title">Title</string>
 </resources>

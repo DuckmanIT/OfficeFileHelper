@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".presentation.MainActivity">
+    tools:context="com.example.officefilefilter.presentation.ui.MainActivity">
 
     <Button
         android:id="@+id/btnGetAllFile"
@@ -39,5 +39,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PDF"/>
+
+    <Button
+        android:id="@+id/btnRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent"/>
+
+    <Button
+        android:id="@+id/btnFavourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favourite"/>
 
 </LinearLayout>

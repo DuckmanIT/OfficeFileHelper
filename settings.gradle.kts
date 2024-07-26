@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "OfficeFileLoader"
 include(":app")
- 
+include(":OfficeFileFilter")
